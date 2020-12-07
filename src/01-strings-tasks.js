@@ -113,11 +113,7 @@ function removeLeadingAndTrailingWhitespaces(value) {
  *   'cat', 3 => 'catcatcat'
  */
 function repeatString(value, count) {
-  let sum = '';
-  for (let i = 1; i <= count; i++) {
-    sum += value;
-  }
-  return sum;
+  return value.repeat(count);
 }
 
 /**
@@ -148,9 +144,8 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  let string = '';
-  str.split('').slice(1, -1).forEach((e) => string += e);
-  return string;
+  const bracket = str.replace('<', '');
+  return bracket.replace('>', '');
 }
 
 
@@ -211,7 +206,7 @@ function extractEmails(str) {
  *
  */
 function getRectangleString(width, height) {
-  if (width == 0 || height == 0) return '';
+  if (width === 0 || height === 0) return '';
 
   const firstStr = `┌${'─'.repeat(width - 2)}┐\n`;
   const midleStr = (`│${' '.repeat(width - 2)}│\n`).repeat(height - 2);
@@ -259,7 +254,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  return !(((value == undefined) || (value == 0) || (Object.keys(value).length == 0)));
+  return !!((typeof value === 'string' || value instanceof String));
 }
 
 
@@ -292,7 +287,7 @@ const arr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9�
   'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
   'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
 function getCardId(value) {
-  return arr.findIndex((e) => e == value);
+  return arr.findIndex((e) => e === value);
 }
 
 

@@ -16,8 +16,8 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    'no-plusplus': ["error", { "allowForLoopAfterthoughts": true }],
-    "eqeqeq": "off",
-    "no-return-assign": "off",
+    // 'no-plusplus': ["error", { "allowForLoopAfterthoughts": true }],
+    // "eqeqeq": "off",
+    // "no-return-assign": "off",
   },
 };
